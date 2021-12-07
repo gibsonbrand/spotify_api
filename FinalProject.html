@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<!--
+    Name:
+    Pawprint:
+    Date:
+    Challenge:Final Fall 2021
+    5CVN7HyBpyqmg8jSzPBrIjXPrQ3jJSWVoC0opjao
+    https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=OPCRSRkenPSejdhKb8oh7Opqege90HSF3QBrz37h
+-->
+<html>
+    <title></title>
+    <head>
+        
+        <style>
+            body{
+                background-image: linear-gradient(to bottom right,orange,brown);
+            }
+            .flex-container{
+                display: flex;
+                background-color: black;
+            }
+            .flex-container > div {
+                background-color: rgba(114, 108, 108, 0.551);
+                border: 4px solid black;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            
+            }
+            #midsection{
+                width: 40%;
+            }
+            #leftside{
+                width: 25%;
+            }
+            #rightside{
+                width: 25%;
+                font-size: 18px;
+                align-content: left;
+            }
+            #camera{
+                width: 60%;
+            }
+            #title{
+                font-size: 48px;
+            }
+
+        </style>
+        <style>
+            body {
+              font-family: fantasy;
+              margin: 0;
+            }
+            
+            * {
+              box-sizing: border-box;
+            }
+            
+            img {
+              vertical-align: middle;
+            }
+            
+            /* Position the image container (needed to position the left and right arrows) */
+            .container {
+              position: relative;
+            }
+            
+            /* Hide the images by default */
+            .mySlides {
+              display: none;
+            }
+            
+            /* Add a pointer when hovering over the thumbnail images */
+            .cursor {
+              cursor: pointer;
+            }
+            
+            /* Next & previous buttons */
+            .prev,
+            .next {
+              cursor: pointer;
+              position: absolute;
+              top: 40%;
+              width: auto;
+              padding: 16px;
+              margin-top: -50px;
+              color: white;
+              font-weight: bold;
+              font-size: 20px;
+              border-radius: 0 3px 3px 0;
+              user-select: none;
+              -webkit-user-select: none;
+            }
+            
+            /* Position the "next button" to the right */
+            .next {
+              right: 0;
+              border-radius: 3px 0 0 3px;
+              margin-right: 35%;
+
+            }
+            
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+              background-color: rgba(0, 0, 0, 0.8);
+            }
+            
+            /* Number text (1/3 etc) */
+            .numbertext {
+              color: #f2f2f2;
+              font-size: 12px;
+              padding: 8px 12px;
+              position: absolute;
+              top: 0;
+              height: 800px;
+            }
+            
+            /* Container for image text */
+            .caption-container {
+              text-align: center;
+              background-color: #222;
+              padding: 2px 16px;
+              color: white;
+            }
+            
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+            
+
+            
+            .active,
+            .demo:hover {
+              opacity: 1;
+            }
+        </style>    
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <script>
+            //w3Schools - https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp
+            var slideIndex = 1;
+            function showPic(){  
+                
+                showSlides(slideIndex);
+            }
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slides[slideIndex-1].style.display = "block";
+            }
+        </script>
+
+        <script>
+		
+			var client_id = '9204023ca378449489244c1af3ca5fe4'; // Your client id
+			var client_secret = '4842c047a6564eeaa61a7e7b5b1b469b'; // Your secret
+			var redirect_uri = 'file:///C:/Users/gibso/Documents/StevenCSS/FinalProject/'; // Your redirect uri
+
+
+				var manifest_Curiosity;
+				var manifest_Opportunity;
+				var manifest_Spirit;
+                var errorMsg;
+
+                var rovername;
+                var launchdate;
+                var landdate;
+                var roverdescription;
+                var rover_curiosity_desc = "The rover's goals include an investigation of the Martian climate and geology, assessment of whether the selected field site inside (3386 total days; 9 years, 99 days) since its landing";
+                var rover_opportunity_desc ="Mission highlights included the initial 90-sol mission, finding meteorites such as Heat Shield Rock (Meridiani Planum meteorite), and potentially clean off its solar panels"; 
+                var rover_spirit_desc = "The rover completed its planned 90-sol mission (slightly less than 92.5 Earth days). Aided by cleaning events that resulted in more energy from the first phase of the mission (the 90-sol prime mission) were published in a special issue of the journal Science.";
+
+			$( document ).ready(function() {
+				//load the manifest on page ready https://api.nasa.gov/planetary/apod?api_key=OPCRSRkenPSejdhKb8oh7Opqege90HSF3QBrz37h
+				
+                $.ajax({url: "https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?sol=1000&api_key=OPCRSRkenPSejdhKb8oh7Opqege90HSF3QBrz37h", success: function(result){
+							
+                            console.log(result);
+                            manifest_Curiosity = result;
+                }});
+                $.ajax({url: "https://api.nasa.gov/mars-photos/api/v1/manifests/opportunity?sol=1000&api_key=OPCRSRkenPSejdhKb8oh7Opqege90HSF3QBrz37h", success: function(result){
+                            
+                    console.log(result);
+                    manifest_Opportunity = result;		
+                }});
+                $.ajax({url: "https://api.nasa.gov/mars-photos/api/v1/manifests/spirit?sol=1000&api_key=OPCRSRkenPSejdhKb8oh7Opqege90HSF3QBrz37h", success: function(result){
+                            
+                    console.log(result);
+                    manifest_Spirit = result;		
+                }});
+                console.log( "ready!" );
+			});
+
+            function getContent() {
+
+					$("#midsection").html("loading...");
+					var baseurl = "https://api.nasa.gov/mars-photos/api/v1/rovers/"
+					var rover = $("#rover").val();
+					var sol = $("#martiansol").val();
+					var camera = $("#camera").val();
+					
+                    //Make sure all fields are picked
+                    if(rover == ""){
+                        errorMsg = "Please select a Rover to view";
+                        $("#displayErrors").html(errorMsg);
+                        $("#midsection").html(errorMsg);
+                        return
+                    }
+                    if(sol == ""){
+                        errorMsg = "Please enter a number for the Martian sol";
+                        $("#displayErrors").html(errorMsg);
+                        $("#midsection").html(errorMsg);
+                        return
+                    }
+                    if(camera == ""){
+                        errorMsg = "Please select the Camera used for the pictures";
+                        $("#displayErrors").html(errorMsg);
+                        $("#midsection").html(errorMsg);
+                        return
+                    }
+                    //Do we have phots in that manifests
+                    //manifest_Curiosity
+                    if (rover == "Curiosity"){
+                        if ( manifest_Curiosity.photo_manifest.total_photos > 0){
+                            console.log("Curiosity has photos");
+                            rovername = manifest_Curiosity.photo_manifest.name;
+                            launchdate = manifest_Curiosity.photo_manifest.launch_date;
+                            landdate = manifest_Curiosity.photo_manifest.landing_date;
+                            roverdescription = rover_curiosity_desc;
+                        }else{
+                            $("#displayErrors").html("No photos for the Curiosity Rover");
+                            $("#midsection").html("No photos for the Curiosity Rover");
+                            return
+                        }
+
+                    }
+                    //manifest_Opportunity
+                    if (rover == "Opportunity"){
+                        if ( manifest_Opportunity.photo_manifest.total_photos > 0){
+                            console.log("Opportunity has photos");
+                            rovername = manifest_Opportunity.photo_manifest.name;
+                            launchdate = manifest_Opportunity.photo_manifest.launch_date;
+                            landdate = manifest_Opportunity.photo_manifest.landing_date;
+                            roverdescription = rover_opportunity_desc;
+                        }else{
+                            $("#displayErrors").html("No photos for the Opportunity Rover");
+                            $("#midsection").html("No photos for the Opportunity Rover");
+                            return
+                        }
+                    }
+                    //manifest_Spirit
+                    if (rover == "Spirit"){
+                        if ( manifest_Spirit.photo_manifest.total_photos > 0){
+                            console.log("Spirit has photos");
+                            rovername = manifest_Spirit.photo_manifest.name;
+                            launchdate = manifest_Spirit.photo_manifest.launch_date;
+                            landdate = manifest_Spirit.photo_manifest.landing_date;
+                            roverdescription = rover_spirit_desc;
+                        }else{
+                            $("#displayErrors").html("No photos for the Spirit Rover");
+                            $("#midsection").html("No photos for the Spirit Rover");
+                            return
+                        }
+                    }
+
+					
+                    //Getting our pictures
+					//You have to have the rover to call the api
+					var url = baseurl + rover + "/photos?api_key=OPCRSRkenPSejdhKb8oh7Opqege90HSF3QBrz37h";
+					if(sol){
+						url += "&sol=" + sol;
+					}
+					//camera is optional in the api
+					if(camera){
+						url += "&camera=" + camera;
+					}
+					console.log(url);
+					              
+					//in the manifest - get the decription from wikipedia
+					
+					//this is actually calling the photo api to get the pictures.
+					$.ajax({url: url, success: function(result){
+                        
+                        console.log(result);
+                        if (result.photos.length == 0){
+                            $("#displayErrors").html("There are no photos for this Rover, Sol, and Camera Combination");
+                            $("#midsection").html("There are no photos for this Rover, Sol, and Camera Combination");
+                            return
+                        }
+
+    
+						var content = "";
+                        result.photos.forEach(photo=>{
+							//console.log(photo);
+                            content+="<div class='mySlides'><img src='" + photo.img_src + "'style='width:100%'/> </div>" +
+                             "<a class='prev' onclick='plusSlides(-1)'>❮</a>" + "<a class='next' onclick='plusSlides(1)''>❯</a>";
+						});
+                        console.log(content);
+                        
+                        $("#midsection").html(content);
+                        $("#rightside").html(
+                            "<label for='rovername'>Rover:</label>&nbsp; <div id='rovername'>" + rovername + "</div>" +
+                            "<label for='launchdate'>Launch Date:</label&nbsp;> <div id='launchdate'>" + launchdate + "</div>" +
+                            "<label for='landdate'>Landing Date:</label&nbsp;> <div id='landdate'>" + landdate + "</div>" +
+                            "<label for='roverdescription'>Description:</label><br><div id='roverdescription'>"  + roverdescription + "</div>"
+                            
+                        )
+                        //call new function to start displaying pictures
+                        showPic();
+						//put this is some type of picture viewer or whatever. Photo Gallery
+                    }});
+					
+               
+            }
+
+
+        
+        </script>
+    </head>
+    <body>
+        
+        <div id="title" style="text-align:center">Mars Explorer</div>
+
+        <div class="flex-container">
+            <div id="leftside">
+                <form>
+                    <label for="rover">Rover:</label><br>
+                    <select id="rover" required>
+                        <option value="" >Please select a Rover</option>
+                        <option value="Curiosity">Curiosity</option>
+                        <option value="Opportunity">Opportunity</option>
+                        <option value="Spirit">Spirit</option>
+                    </select><br><br>
+                    <label for="martiansol" >Martian Sol:</label><br>
+                    <input type="number" id="martiansol" name="martiansol" placeholder="Please enter a Martian Sol" min="0" required></input><br><br>
+                    <label for="camera">Camera:</label><br>
+                    <select id="camera" >
+                        <option value="">All Cameras</option>
+                        <option value="FHAZ">Front Hazard Avoidance Camera</option>
+                        <option value="RHAZ">Rear Hazard Avoidance Camera</option>
+                        <option value="MAST">Mast Camera</option>
+                        <option value="CHEMCAM">Chemistry and Camera Complex</option>
+                        <option value="MAHLI">Mars Hand Lens Imager</option>
+                        <option value="MARDI">Mars Descent Imager</option>
+                        <option value="NAVCAM">Navigation Camera</option>
+                        <option value="PANCAM">Panoramic Camera</option>
+                        <option value="MINITES">Miniature Thermal Emission Spectrometer (Mini-TES)</option>
+                    </select>
+                    
+
+                </form>
+                <br><br>
+                <div><button type="button" onclick="getContent()">Show Pictures</button></div>
+                
+            </div>
+            <!--Need to put into mid box the arrows -->
+            <div id="midsection" > </div>
+            <div id="rightside">  </div>
+        </div>
+        <div id="contentBox"></div>
+        <!--<button type="button" onclick="getContent()">Show Pictures</button>-->
+    </body>
+</html>
