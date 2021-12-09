@@ -30,12 +30,12 @@ $( document ).ready(function() {
    const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
    // Don't authorize if we have an access token already
    if(accessToken == null || accessToken == "" || accessToken == undefined){
-    accessToken = localStorage.getItem(accessToken);
+    //accessToken = localStorage.getItem("accessToken");
       if(accessToken == null || accessToken == "" || accessToken == undefined){
           window.location.replace(redirect);
       }
    }else{
-      localStorage.setItem("accessToken", accessToken );
+      //localStorage.setItem("accessToken", accessToken );
    }
 
    // Search button has been clicked
