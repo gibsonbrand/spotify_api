@@ -18,6 +18,7 @@ $( document ).ready(function() {
 
    // Get Access Token
    const accessToken = getUrlParameter('access_token');
+   const token = ""; 
 
    // AUTHORIZE with Spotify (if needed)
    // *************** REPLACE THESE VALUES! *************************
@@ -31,13 +32,14 @@ $( document ).ready(function() {
    // Don't authorize if we have an access token already
    if(accessToken == null || accessToken == "" || accessToken == undefined){
        try {
-            accessToken = localStorage.getItem("accessToken");
+            token = localStorage.getItem("token");
         }
         catch(err) {
-          console.log("Erro in try catch");
+          console.log("Error in try catch");
         }
-       
+        if(token == null || token == "" || token == undefined){
            window.location.replace(redirect);
+        }    
    }else{
       localStorage.setItem("token", accessToken );
    }
