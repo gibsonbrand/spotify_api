@@ -2,9 +2,70 @@
 <html>
     <title>Genre</title>
     <head>
+        <style>
+            .flex-container{
+                display: flex;
+                background-color: black;
+                flex-direction: column;
+            }
+            .flex-container > div {
+                background-color: rgba(219, 191, 191, 0.551);
+                border: 4px solid black;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+                width: 100%;
+                text-align: center;
+            
+            }
+            #topsection{
+                height: 20%;
+            }
+            #midsection{
+                height: 50%;
+            }
+            #bottomsection{
+                height: 30%;
+               align-content: left;
+            }
+        </style>
          <!-- Loading our stylesheet & navigation bar -->
         <link href="style.css" rel="stylesheet">
-       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            var pop_desc = "Pop History Here";
+            var country_desc = "Country History Here";
+            var rock_desc = "Rock History Here";
+            var content = "";
+           
+            function getContent() {
+                var genre = $("#genre").val();
+                console.log(genre);
+                if(genre == ""){
+                    errorMsg = "Please select a Genre to view";
+                    $("#midsection").html(errorMsg);
+                    return
+                }
+                if(genre == "Pop"){
+                    content = pop_desc;
+                }
+                if(genre == "Country"){
+                    content = country_desc;
+                }
+                if(genre == "Rock"){
+                    content = rock_desc;
+                }
+                $("#midsection").html(content);
+
+
+
+
+            }
+
+
+
+
+        </script>
 
 
     </head>
@@ -19,41 +80,28 @@
                 <li style="float:right">Log Out</li>
             </ul>
         </div>
-        <div>
-            <div>
-            <!--Use javascript for show and hide for the info
-                Image for pop
-                use button!!!!
-                bottom history-->
 
-            <!--Image for party
-                bottom history-->
+        <div class="flex-container">
+            <div id="topsection">
+                <form>
+                    <label for="genre">Genre History:</label><br>
+                    <select id="genre" required>
+                        <option value="" >Please select a Genre</option>
+                        <option value="Pop">Pop</option>
+                        <option value="Country">Country</option>
+                        <option value="Rock">Rock</option>
+                    </select><br><br>
+                    
+                    
 
-            <!--Image for rock
-                bottom history-->
-
-            <!--Image for country
-                bottom history-->
-
-            <!--Image for edm
-                bottom history-->
-
-            <!--Image for rap
-                bottom history-->
-
+                </form>
+                <br><br>
+                <div><button type="button" onclick="getContent()">Show History</button></div>
+                
             </div>
-            <div>
-                <!--info on history
-                    https://www.youtube.com/watch?v=d0FFlTeyAY8--->
-                <p>Pop is a genre of popular music that originated in its modern form during the mid-1950s in the United States and the United Kingdom.[4] The terms popular
-                     music and pop music are often used interchangeably, although the former describes all music that is popular and includes many disparate styles. 
-                     During the 1950s and 1960s, pop music encompassed rock and roll and the youth-oriented styles it influenced. Rock and pop music remained roughly synonymous 
-                     until the late 1960s, after which pop became associated with music that was more commercial, ephemeral, and accessible.
-    
-                    Although much of the music that appears on record charts is seen as pop music, the genre is distinguished from chart music. Identifying factors usually include repeated choruses and hooks, short to medium-length songs written in a basic format (often the verse-chorus structure), and rhythms or tempos that can be easily danced to. Much pop music also borrows elements from other styles such as rock, urban, dance, Latin, and country.</p>
-               
-    
-                </div>
+            <!--Need to put into mid box the arrows -->
+            <div id="midsection" > </div>
+            <div id="bottomsection">  </div>
         </div>
 
         </body>
