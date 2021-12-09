@@ -26,7 +26,7 @@ div[id*='ytsubscribe'] {
   .input-group {
     position: absolute;
     top: 10%; left: 50%;
-    transform: translate(-50%, -50%);
+    /*transform: translate(-50%, -50%);*/
     background: #fff;
     border-radius: 40px;
     padding: 10px;
