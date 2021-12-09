@@ -30,7 +30,16 @@ $( document ).ready(function() {
    const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
    // Don't authorize if we have an access token already
    if(accessToken == null || accessToken == "" || accessToken == undefined){
+       try {
+            accessToken = localStorage.getItem("accessToken");
+        }
+        catch(err) {
+          console.log("Erro in try catch");
+        }
+       
            window.location.replace(redirect);
+   }else{
+      localStorage.setItem("token", accessToken );
    }
 
    // Search button has been clicked
