@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--   
+Name: Steven Gibson
+Pawprint:Srgh3b
+Date:08/10/21
+Challenge:To-Do List
+-->
+<html lang="en">
+    <!--could not understand how to do action or to implement stars could there be a video released later that could explain 
+don't understand how to do customizable title to.
+
+Refrences:
+https://www.codegrepper.com/code-examples/javascript/how+to+assign+image+to+a+variable+in+javascript
+https://www.w3schools.com/html/html_forms.asp
+https://www.w3schools.com/tags/tag_select.asp
+https://www.youtube.com/watch?v=yEnDNP173Ow
+https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
+
+
+-->
+    <head>
+        <meta charset="utf-8">
+        <link rel="styleSheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+        <link rel="stylesheet"
+          href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+        <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js" 
+            integrity=
+            "sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" 
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="style.js"></script>
+        <title> To Do List </title>
+        <style>
+            #container, #formcontainer{
+                width:80%;
+                border: 2px solid black;
+                margin: auto;
+            
+            }
+            #formcontainer{
+                margin-top: 20px;
+            }
+            #totable{
+                width: 100%;
+                background-color: black;
+                color: white;
+                
+            }
+            th, td{
+                font-size:18px;
+                border: 4px solid black;
+                background-color: black;
+                color: white;
+            }
+            #priority{
+                display: inline;
+                width: 30%;
+            }
+            #title{
+                width: 15%;
+            }
+            body{
+                background-image: linear-gradient(120deg,pink,yellow);
+                min-height: 100vh;
+                color: black;
+            }
+            
+            .darkmode{
+                background-image: linear-gradient(120deg,black,red);
+                min-height: 100vh;
+                color:white;
+            }
+            #but{
+                float: right;
+            }
+            #blink{
+                font-size:18px;
+                color: black;
+            }
+        </style>
+    </head>
+    <body onload="addEventListener()">
+        <a href="Srgh3b-Projects-F21.html" id="blink">Projects</a>
+        <button id="but" onclick="darkmode()">Dark Mode</button>
+        <div id="container">
+            <h2>Steven's To Do List</h2>
+            <table id="totable">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Date</th>
+                    <th>Priority</th>
+                    <th>Action</th>
+                </tr>
+                    
+                </thead>
+                <tbody id="showbody">
+                
+                </tbody>
+            </table>
+        </div>
+        <div id="formcontainer">
+            <form id="addlist">
+				
+                <input type="text" id="title" placeholder="Title">
+                <!-- selector for type-->
+                <select id="options" name="options">
+					<option value="">Choose</option>
+                    <option value="Home">Home</option>
+                    <option value="Work">Work</option>
+                    <option value="Extracurricular">Extracurricular</option>
+                    <option value="Online">Online</option>
+                    <option value="Misc">Misc</option>
+                </select>
+                <input id="datetodo" type="date" name="datetodo"  min="2021-08-10">
+                <input id="priority" type="range" name="scale" min="0" max="6">
+                
+                
+    
+                <button onclick="createListItem()" type="submit">Add to list</button>
+				<button onclick="clearchoices()" type="submit">Clear</button>
+            </form>
+        
+        </div>
+    </body>
+</html>

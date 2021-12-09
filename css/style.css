@@ -8,7 +8,7 @@ div[id*='ytsubscribe'] {
       background-image: url("../img/spotify.jpg");
   }
   
-  /* Make Spotify Songs Look More Round */
+  /* Make Spotify Songs Look More Round /style for song bubbles*/
   iframe {
     border-radius: 30px;
   }
