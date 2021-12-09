@@ -5,7 +5,7 @@ div[id*='ytsubscribe'] {
   
   /* Have a Spotify Themed Background */
   body{
-      background-image: url("../img/spotify.jpg");
+     
   }
   
   /* Make Spotify Songs Look More Round /style for song bubbles*/
@@ -68,7 +68,7 @@ div[id*='ytsubscribe'] {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 0.4s;
+    /*transition: 0.4s;*/
     color: #1d20b9;
     cursor: pointer;
   }
@@ -102,7 +102,7 @@ div[id*='ytsubscribe'] {
     padding: 0;
     color: #333;
     font-size: 16px;
-    transition: 0.4s;
+    /*transition: 0.4s;*/
     line-height: 40px;
     width: 0px;
     font-weight: bold;
