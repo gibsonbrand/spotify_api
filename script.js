@@ -33,15 +33,18 @@ $( document ).ready(function() {
    if(accessToken == null || accessToken == "" || accessToken == undefined){
        try {
             token = localStorage.getItem("token");
+            console.log("in try");
         }
         catch(err) {
           console.log("Error in try catch");
         }
         if(token == null || token == "" || token == undefined){
+          console.log("in token");
            window.location.replace(redirect);
         }    
    }else{
       localStorage.setItem("token", accessToken );
+      console.log("in set local storage with token");
    }
 
    // Search button has been clicked
