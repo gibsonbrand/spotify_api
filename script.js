@@ -18,7 +18,6 @@ $( document ).ready(function() {
 
    // Get Access Token
    const accessToken = getUrlParameter('access_token');
-   const token = ""; 
 
    // AUTHORIZE with Spotify (if needed)
    // *************** REPLACE THESE VALUES! *************************
@@ -31,21 +30,21 @@ $( document ).ready(function() {
    const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
    // Don't authorize if we have an access token already
    if(accessToken == null || accessToken == "" || accessToken == undefined){
-       try {
-            token = localStorage.getItem("token");
-            console.log("in try");
-        }
-        catch(err) {
-          console.log("Error in try catch");
-        }
-        if(token == null || token == "" || token == undefined){
-          console.log("in token");
-           window.location.replace(redirect);
-        }    
-   }else{
-      localStorage.setItem("token", accessToken );
-      console.log("in set local storage with token");
-   }
+    try {
+         token = localStorage.getItem("token");
+         console.log("in try");
+     }
+     catch(err) {
+       console.log("Error in try catch");
+     }
+     if(token == null || token == "" || token == undefined){
+       console.log("in token");
+        window.location.replace(redirect);
+     }    
+}else{
+   localStorage.setItem("token", accessToken );
+   console.log("in set local storage with token");
+}
 
    // Search button has been clicked
    $( "#search_button" ).click(function() {
