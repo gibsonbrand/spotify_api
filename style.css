@@ -32,8 +32,6 @@ li a:hover:not(.active) {
 
 
 
-
-
 div[id*='ytsubscribe'] {
     position: absolute;
     top: 85%; left: 85%;
@@ -42,14 +40,12 @@ div[id*='ytsubscribe'] {
   #bdes{
     background-image: linear-gradient(120,blue,white)
   }
-  
-  /* Make Spotify Songs Look More Round /style for song bubbles*/
+    
   .iframe {
     border-radius: 30px;
   }
   
-  /* Make the Spotify Results Fall Into the Same Row */
-  .col {
+   .col {
     display: inline-block !important;
   }
   
@@ -67,32 +63,12 @@ div[id*='ytsubscribe'] {
     padding: 10px;
   }
 
-  /*.buscar-caja {
-    position: absolute;
-    top: 10%; left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    border-radius: 40px;
-    padding: 10px;
-  }*/
-  /*.input-group:hover > .group-txt
-  {
-    width: 240px;
-    padding: 0 6px;
-  }*/
-  /*.buscar-caja:hover > .buscar-txt
-  {
-    width: 240px;
-    padding: 0 6px;
-  }*/
+  
   .input-group:hover > .group-btn {
     background: white;
     color: black;
   }
-  /*.buscar-caja:hover > .buscar-btn {
-    background: white;
-    color: black;
-  }*/
+ 
   .group-btn {
   
     float: right;
@@ -107,28 +83,11 @@ div[id*='ytsubscribe'] {
     color: #1d20b9;
     cursor: pointer;
   }
-  /*.buscar-btn {
-  
-    float: right;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s;
-    color: #1DB954;
-    cursor: pointer;
-  }*/
+ 
   .group-btn > i
   {
     font-size: 18px;
   }
-  /*.buscar-btn > i
-  {
-    font-size: 18px;
-  }*/
   .group-txt {
     border: none;
     background: none;
@@ -137,24 +96,11 @@ div[id*='ytsubscribe'] {
     padding: 0;
     color: #333;
     font-size: 16px;
-    /*transition: 0.4s;*/
     line-height: 40px;
     width: 0px;
     font-weight: bold;
   }
-  /*.buscar-txt {
-    border: none;
-    background: none;
-    outline: none;
-    float: left;
-    padding: 0;
-    color: #333;
-    font-size: 16px;
-    transition: 0.4s;
-    line-height: 40px;
-    width: 0px;
-    font-weight: bold;
-  }*/
+
   .btn-primary{
       background: #fff;
       color: #CB356B;

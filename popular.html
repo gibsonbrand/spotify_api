@@ -18,6 +18,9 @@
         </div>
         <div>
             <div>
+
+               
+
              <!--Use javascript for show and hide for the info
                 Image for pop
                 use button!!!!
@@ -47,7 +50,36 @@
                 bottom history-->
 
             </div>
+            <br /> <br />  <br />    <br /> <br />
             <div>
+                <label >Learn more about these artists</label>
+                <form action="artists.php" method="get" name="artistForm" id="artistForm" target="_blank">
+                    <select name="listdropdown" id="listdropdown" >
+                        <option >Choose An Artist</option>
+                        <option value="Tim McGraw">Tim McGraw</option>
+                        <option value="Kenny Chesney">Kenny Chesney</option>
+                    </select>
+                    <br /><br />
+                    <input type="reset" value="Clear">&nbsp; <input type="submit" value="Submit">
+                </form>
+                <br /> <br /> 
+                <p>See a video of this artist</p>
+                <p>
+                    <iframe height="480" width="500"  
+                    src="https://www.youtube.com/embed/il_t1WVLNxk">
+                    </iframe>
+                </p>
+                <label >Artists age</label>
+                <form action="artistsage.php" method="post" name="artistAgeForm" id="artistAgeForm" target="_blank">
+                    <select name="agelistdropdown" id="agelistdropdown" >
+                        <option >Choose An Artist</option>
+                        <option value="Tim McGraw">Tim McGraw</option>
+                        <option value="Kenny Chesney">Kenny Chesney</option>
+                    </select>
+                    <br /><br />
+                    <input type="reset" value="Clear">&nbsp; <input type="submit" value="Submit">
+                </form>
+
             <!--info on history
                 https://www.youtube.com/watch?v=d0FFlTeyAY8--->
             <p>Pop is a genre of popular music that originated in its modern form during the mid-1950s in the United States and the United Kingdom.[4] The terms popular
