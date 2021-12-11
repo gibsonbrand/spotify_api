@@ -21,12 +21,12 @@ $( document ).ready(function() {
 
    // AUTHORIZE with Spotify (if needed)
    // *************** REPLACE THESE VALUES! *************************
-   let client_id = '9204023ca378449489244c1af3ca5fe4';
-   // let client_id = '';
+   //let client_id = '9204023ca378449489244c1af3ca5fe4';
+    let client_id = 'ac735f13981045a8a81e7239e57180c4';
    // Use the following site to convert your regular url to the encoded version:
    // https://www.url-encode-decode.com/
-   let redirect_uri = 'https%3A%2F%2Fgibsonbrand.github.io%2Fspotify_api'; 
-   //let redirect_uri = 'http%3A%2F%2F34.122.28.231%2FFinalProject';
+   //let redirect_uri = 'https%3A%2F%2Fgibsonbrand.github.io%2Fspotify_api'; 
+   let redirect_uri = 'http%3A%2F%2F34.122.28.231%2FFinalProject';
    
    // *************** END *************************
 

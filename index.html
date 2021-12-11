@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
   <!-- Loading our stylesheet & navigation bar -->
-    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" >
 
 
 
@@ -32,18 +32,18 @@
         <li style="float:right">Log Out</li>
     </ul>
 </div>
+ 
   
-  <!-- Search Bar -->
   <div class="input-group">
-    <input type="text" id="search-text" placeholder="Search ...." ></input>
+    <input type="text" id="search-text" placeholder="Search" ></input>
     <button type="button" id="search_button" >Search</button>
     
   </div>
 
   
-  <!-- Load songs into here -->
-  <div class="container" id="song-list">
-    <div class="row">
+  
+  <div class="songcontainer" id="song-list">
+    <div class="row" class="songrow">
       <div id="song_0" class="col"></div>
       <div id="song_1" class="col"></div>
       <div id="song_2" class="col"></div>
@@ -63,7 +63,7 @@
       <div id="song_10" class="col"></div>
       <div id="song_11" class="col"></div>
     </div>
-    <iframe src="footer.html"></iframe>
+   
 </div>
   <script src="https://apis.google.com/js/platform.js"></script>
   <!-- jQuery -->
@@ -73,6 +73,11 @@
 
   <!-- JavaScript -->
   <script src="script.js" charset="utf-8"></script>
+
+  <div class="footer">
+      <iframe src="footer.html"></iframe>
+  </div>
+  
 
 </body>
 

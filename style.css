@@ -38,7 +38,7 @@ div[id*='ytsubscribe'] {
   }
   
   #bdes{
-    background-image: linear-gradient(120,blue,white)
+    background-color: blue;
   }
     
   .iframe {
@@ -111,5 +111,33 @@ div[id*='ytsubscribe'] {
     color: white;
   }
   .container{
+    background-color: red;
     background-image: linear-gradient(120,blue,white);
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: blue;
+    color: white;
+    text-align: center;
+  }
+  
+  .vidwel{
+    font-family: fantasy;
+    color: black;
+  }
+  .wvid{
+  background-color: white;
+  }
+  .bvid{
+    background-color: blue;
+  }
+  .songcontainer{
+    background-color: white;
+  }
+  .songrow{
+    background-color: blue;
   }
