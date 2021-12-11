@@ -22,9 +22,12 @@ $( document ).ready(function() {
    // AUTHORIZE with Spotify (if needed)
    // *************** REPLACE THESE VALUES! *************************
    let client_id = '9204023ca378449489244c1af3ca5fe4';
+   // let client_id = '';
    // Use the following site to convert your regular url to the encoded version:
    // https://www.url-encode-decode.com/
-   let redirect_uri = 'https%3A%2F%2Fgibsonbrand.github.io%2Fspotify_api'; // GitHub Pages URL or whatever your public url to this app is
+   let redirect_uri = 'https%3A%2F%2Fgibsonbrand.github.io%2Fspotify_api'; 
+   //let redirect_uri = 'http%3A%2F%2F34.122.28.231%2FFinalProject';
+   
    // *************** END *************************
 
    const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
@@ -33,6 +36,7 @@ $( document ).ready(function() {
     try {
          token = localStorage.getItem("token");
          console.log("in try");
+         accessToken = token;
      }
      catch(err) {
        console.log("Error in try catch");
@@ -44,7 +48,8 @@ $( document ).ready(function() {
 }else{
    localStorage.setItem("token", accessToken );
    console.log("in set local storage with token");
-}
+} 
+
 
    // Search button has been clicked
    $( "#search_button" ).click(function() {
