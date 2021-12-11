@@ -36,6 +36,10 @@
                 background-color: blue;
                 color: white;
             }
+         
+            #genrebody > div{
+                background-color: blue;
+            }
         </style>
          <!-- stylesheet -->
         <link href="style.css" rel="stylesheet">
@@ -89,6 +93,10 @@
 
 
             }
+            function logOut() {
+                window.location.href = 'logout.html';
+
+            }
 
 
 
@@ -97,14 +105,14 @@
 
 
     </head>
-    <body>
+    <body id="genrebody">
         <div id="navbar">
             <ul>
                 <li><a href="index.html">Welcome</a></li>
                 <li><a href="genre.html">Genre</a></li>
-                <li><a href="popular.html">Popular Songs</a></li>
+                <li><a href="login.html">YouTube Videos</a></li>
             
-                <li style="float:right">Log Out</li>
+                <li style="float:right"><button type="button" id="logOut" onclick="logOut()">Log Out</button></li>
             </ul>
         </div>
 
@@ -119,7 +127,7 @@
                         <option value="Rock">Rock</option>
                         <option value="Classical">Classical</option>
                         <option value="Jazz">Jazz</option>
-                        <option value="Soul">soul</option>
+                        <option value="Soul">Soul</option>
                         <option value="HeavyMetal">Heavy Metal</option>
                         <option value="rap">Rap</option>
                     </select><br><br>
@@ -133,7 +141,32 @@
             </div>
             <!--Put descriptions in mid section -->
             <div id="midsection" > </div>
-            <iframe src="footer.html"></iframe>
+            <div class="faq-container">
+                <label >Fun Facts about these artists</label>
+                        <form action="artists.php" method="get" name="artistForm" id="artistForm" target="_blank">
+                            <select name="listdropdown" id="listdropdown" >
+                                <option >Choose An Artist</option>
+                                <option value="Tim McGraw">Tim McGraw</option>
+                                <option value="Kenny Chesney">Kenny Chesney</option>
+                            </select>
+                            <br /><br />
+                            <input type="reset" value="Clear">&nbsp; <input type="submit" value="Submit">
+                        </form>
+                        <br /> <br />
+        
+                   <label>Artists age</label>
+                        <form action="artistsage.php" method="post" name="artistAgeForm" id="artistAgeForm" target="_blank">
+                            <select name="agelistdropdown" id="agelistdropdown" >
+                                <option >Choose An Artist</option>
+                                <option value="Tim McGraw">Tim McGraw</option>
+                                <option value="Kenny Chesney">Kenny Chesney</option>
+                            </select>
+                            <br /><br />
+                            <input type="reset" value="Clear">&nbsp; <input type="submit" value="Submit">
+                        </form>  
+        
+                </div>
+                <iframe src="footer.html" class="mine"></iframe>
         </div>
         </body>
 </html>

@@ -38,11 +38,11 @@ div[id*='ytsubscribe'] {
   }
   
   #bdes{
-    background-color: blue;
+    background-color:white;
   }
     
   .iframe {
-    border-radius: 30px;
+    border-radius: 0%;
   }
   
    .col {
@@ -120,6 +120,7 @@ div[id*='ytsubscribe'] {
     left: 0;
     bottom: 0;
     width: 100%;
+    height: 50px;
     background-color: blue;
     color: white;
     text-align: center;
@@ -135,9 +136,9 @@ div[id*='ytsubscribe'] {
   .bvid{
     background-color: blue;
   }
-  .songcontainer{
-    background-color: white;
-  }
-  .songrow{
-    background-color: blue;
+  
+.mine{
+  font-family: fantasy;
+  width: 100%;
+ bottom: 0%;
   }
