@@ -108,6 +108,7 @@ div[id*='ytsubscribe'] {
   }
   #search-text{
     background-color: blue;
+    color: white;
   }
   .container{
     background-image: linear-gradient(120,blue,white);
