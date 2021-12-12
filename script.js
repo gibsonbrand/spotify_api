@@ -72,3 +72,8 @@ $( document ).ready(function() {
      }); // End of Spotify ajax call
    }); // End of search button
  }); // End of document.ready
+
+ function logOut() {
+  window.location.href = 'logout.html';
+
+}
