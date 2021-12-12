@@ -183,3 +183,13 @@ div[id*='ytsubscribe'] {
 #genrebody > div{
     background-color: blue;
 }
+#loggedouts{
+  font-size: 64px;
+  background-color: blue;
+  color: white;
+
+}
+#loggoutbody{
+  background-color: blue;
+
+}
