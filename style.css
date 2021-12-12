@@ -28,8 +28,9 @@ li a:hover:not(.active) {
 .active {
   background-color: #98a0ec;
 }
-
-
+body{
+  background-image: url("images.jpg");
+}
 
 
 div[id*='ytsubscribe'] {
@@ -37,8 +38,8 @@ div[id*='ytsubscribe'] {
     top: 85%; left: 85%;
   }
   
-  #bdes{
-    background-color:white;
+  #bdes > body{
+    background-image: url("images.jpg");
   }
     
   .iframe {
@@ -131,7 +132,7 @@ div[id*='ytsubscribe'] {
     color: black;
   }
   .wvid{
-  background-color: white;
+  background-color: blue;
   }
   .bvid{
     background-color: blue;
@@ -141,4 +142,7 @@ div[id*='ytsubscribe'] {
   font-family: fantasy;
   width: 100%;
  bottom: 0%;
+  }
+  #RockArtists{
+    margin-bottom: 30px;
   }
