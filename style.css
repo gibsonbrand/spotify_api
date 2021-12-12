@@ -146,3 +146,40 @@ div[id*='ytsubscribe'] {
   #RockArtists{
     margin-bottom: 30px;
   }
+  .genre-container{
+    display: flex;
+    background-color: blue;
+    flex-direction: column;
+}
+.genre-container > div {
+    background-color: white;
+    border: 6px solid black;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+
+}
+#topsection{
+    height: 20%;
+}
+#midsection{
+    height: 50%;
+}
+#bottomsection{
+    height: 30%;
+   align-content: left;
+}
+#showhistory{
+    background-color: blue;
+    color: white;
+}
+#genre{
+    background-color: blue;
+    color: white;
+}
+
+#genrebody > div{
+    background-color: blue;
+}
